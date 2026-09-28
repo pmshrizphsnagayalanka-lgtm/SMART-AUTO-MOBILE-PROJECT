@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smart Automobile Parts Explorer</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <div class="logo">PM SHRI ZPH SCHOOL NAGAYALANKA</div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#parts">Parts</a>
+        <a href="#models">Models</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="tag">SCHOOL LEVEL PROJECT</span>
+
+        <h1>
+          SMART AUTOMOBILE
+          <span>PARTS EXPLORER</span>
+        </h1>
+
+        <p>
+          Explore the important parts, working systems and small demonstration
+          models of Cars, Bikes and Lorries.
+        </p>
+
+        <div class="hero-buttons">
+          <button onclick="scrollToSection('vehicles')">
+            Explore Vehicles
+          </button>
+
+          <button class="outline" onclick="scrollToSection('models')">
+            View Models
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-car">🚗</div>
+    </section>
+
+    <!-- VEHICLES -->
+    <section id="vehicles">
+      <div class="section-title">
+        <span>01</span>
+        <h2>Vehicle Categories</h2>
+        <p>Select a vehicle to explore its major systems.</p>
+      </div>
+
+      <div class="vehicle-grid">
+        <div class="vehicle-card" onclick="showVehicle('car')">
+          <img src="car.jpg.png" alt="Car" />
+
+          <div class="card-content">
+            <h3>🚗 Cars</h3>
+
+            <p>
+              Learn about engine, gearbox, brakes, suspension and electrical
+              systems.
+            </p>
+
+            <button>Explore →</button>
+          </div>
+        </div>
+
+        <div class="vehicle-card" onclick="showVehicle('bike')">
+          <img src="bike.jpg.png" alt="Bike" />
+
+          <div class="card-content">
+            <h3>🏍️ Bikes</h3>
+
+            <p>Understand engine, clutch, chain, brakes and suspension.</p>
+
+            <button>Explore →</button>
+          </div>
+        </div>
+
+        <div class="vehicle-card" onclick="showVehicle('lorry')">
+          <img src="lorry.jpg.png" alt="Lorry" />
+
+          <div class="card-content">
+            <h3>🚛 Lorries</h3>
+
+            <p>
+              Explore heavy vehicle engines, braking systems and transmission.
+            </p>
+
+            <button>Explore →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTS -->
+    <section id="parts" class="parts-section">
+      <div class="section-title">
+        <span>02</span>
+        <h2>Automobile Parts</h2>
+        <p>Important components used in automobiles.</p>
+      </div>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search automobile part..."
+          onkeyup="searchParts()"
+        />
+
+        🔍
+      </div>
+
+      <div id="partsGrid" class="parts-grid">
+        <!-- ENGINE -->
+
+        <div class="part-card" data-name="engine">
+          <img src="engine.jpg.png" />
+
+          <div>
+            <span class="part-number">01</span>
+
+            <h3>Engine</h3>
+
+            <p>
+              The engine converts fuel energy into mechanical energy to move the
+              vehicle.
+            </p>
+
+            <button onclick="showPart('Engine')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- BATTERY -->
+
+        <div class="part-card" data-name="battery">
+          <img src="battery.jpg.png" />
+
+          <div>
+            <span class="part-number">02</span>
+
+            <h3>Battery</h3>
+
+            <p>
+              Supplies electrical energy for starting and operating electrical
+              systems.
+            </p>
+
+            <button onclick="showPart('Battery')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- BRAKE -->
+
+        <div class="part-card" data-name="brake brakes">
+          <img src="brake.jpg.png" />
+
+          <div>
+            <span class="part-number">03</span>
+
+            <h3>Braking System</h3>
+
+            <p>Helps slow down or stop the vehicle safely.</p>
+
+            <button onclick="showPart('Braking System')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- GEARBOX -->
+
+        <div class="part-card" data-name="gearbox transmission">
+          <img src="gearbox.jpg.png" />
+
+          <div>
+            <span class="part-number">04</span>
+
+            <h3>Gearbox</h3>
+
+            <p>
+              Transfers engine power to the wheels at different speeds and
+              torque.
+            </p>
+
+            <button onclick="showPart('Gearbox')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- CLUTCH -->
+
+        <div class="part-card" data-name="clutch">
+          <img src="clutch.jpg.png" />
+
+          <div>
+            <span class="part-number">05</span>
+
+            <h3>Clutch</h3>
+
+            <p>Connects and disconnects the engine from the transmission.</p>
+
+            <button onclick="showPart('Clutch')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- SUSPENSION -->
+
+        <div class="part-card" data-name="suspension">
+          <img src="suspension.jpg.png" />
+
+          <div>
+            <span class="part-number">06</span>
+
+            <h3>Suspension</h3>
+
+            <p>Absorbs road shocks and helps maintain vehicle stability.</p>
+
+            <button onclick="showPart('Suspension')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- RADIATOR -->
+
+        <div class="part-card" data-name="radiator cooling">
+          <img src="radiator.jpg.png" />
+
+          <div>
+            <span class="part-number">07</span>
+
+            <h3>Radiator</h3>
+
+            <p>Helps remove excess heat from the engine cooling system.</p>
+
+            <button onclick="showPart('Radiator')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- TYRE -->
+
+        <div class="part-card" data-name="tyre tire wheel">
+          <img src="tyre.jpg.png" />
+
+          <div>
+            <span class="part-number">08</span>
+
+            <h3>Tyre & Wheel</h3>
+
+            <p>
+              Provides contact with the road and transfers motion to the ground.
+            </p>
+
+            <button onclick="showPart('Tyre & Wheel')">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKING MODELS -->
+
+    <section id="models">
+      <div class="section-title">
+        <span>03</span>
+
+        <h2>Mini Working Models</h2>
+
+        <p>Physical models that can be demonstrated during the exhibition.</p>
+      </div>
+
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="model-icon">⚙️</div>
+
+          <h3>Mini Gearbox</h3>
+
+          <p>Demonstrate how different gears change speed and torque.</p>
+
+          <span>Difficulty: ⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🛞</div>
+
+          <h3>Hydraulic Brake Model</h3>
+
+          <p>
+            Show how pressure is transferred through hydraulic fluid to operate
+            brakes.
+          </p>
+
+          <span>Difficulty: ⭐⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🔋</div>
+
+          <h3>Vehicle Electrical System</h3>
+
+          <p>
+            Use LEDs to demonstrate headlights, indicators and basic circuits.
+          </p>
+
+          <span>Difficulty: ⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🌡️</div>
+
+          <h3>Engine Cooling Model</h3>
+
+          <p>Demonstrate the basic concept of radiator-based cooling.</p>
+
+          <span>Difficulty: ⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🔧</div>
+
+          <h3>Clutch Working Model</h3>
+
+          <p>
+            Demonstrate how a clutch connects and disconnects power
+            transmission.
+          </p>
+
+          <span>Difficulty: ⭐⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🚦</div>
+
+          <h3>Smart Vehicle Safety</h3>
+
+          <p>
+            Demonstrate a simple obstacle warning system using sensors and LEDs.
+          </p>
+
+          <span>Difficulty: ⭐⭐⭐</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section">
+      <div class="section-title">
+        <span>04</span>
+
+        <h2>How Automobile Systems Work</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <b>01</b>
+          <h3>Energy</h3>
+          <p>Fuel or electrical energy provides the required power.</p>
+        </div>
+
+        <div class="step">
+          <b>02</b>
+          <h3>Engine</h3>
+          <p>Engine converts energy into mechanical motion.</p>
+        </div>
+
+        <div class="step">
+          <b>03</b>
+          <h3>Transmission</h3>
+          <p>Gearbox and clutch transfer power.</p>
+        </div>
+
+        <div class="step">
+          <b>04</b>
+          <h3>Wheels</h3>
+          <p>Wheels convert rotational motion into vehicle movement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+      <div>
+        <span class="tag"> SCIENCE • TECHNOLOGY • AUTOMOBILES </span>
+
+        <h2>Learn Automobiles Through Models</h2>
+
+        <p>
+          This project explains automobile technology using interactive web
+          content and physical demonstration models.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <strong>3</strong>
+          <span>Vehicles</span>
+        </div>
+
+        <div>
+          <strong>8+</strong>
+          <span>Parts</span>
+        </div>
+
+        <div>
+          <strong>6</strong>
+          <span>Models</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <h3>🚘 SMART AUTOMOBILE PARTS EXPLORER</h3>
+
+      <p>District Level Science Project</p>
+
+      <p>Designed & Developed in <i>YASWANTH.B</i></p>
+    </footer>
+
+    <!-- MODAL -->
+
+    <div id="modal" class="modal">
+      <div class="modal-box">
+        <button class="close" onclick="closeModal()">×</button>
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalText"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
