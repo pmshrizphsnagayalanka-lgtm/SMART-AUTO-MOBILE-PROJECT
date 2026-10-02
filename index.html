@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smart Automobile Parts Explorer</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <div class="logo logo1">PM SHRI ZPH <sup>+</sup> SCHOOL NAGAYALANKA</div>
+
+      <nav>
+        <a href="#home" class="hlink">Home</a>
+        <a href="#vehicles" class="hlink">Vehicles</a>
+        <a href="#parts" class="hlink">Parts</a>
+        <a href="#models" class="hlink">Models</a>
+        <a href="#about" class="hlink">About</a>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="heros">
+      <div class="hero-content">
+        <span class="tag">SCHOOL LEVEL PROJECT</span>
+
+        <h1 style="color:white;">
+          SMART AUTOMOBILE
+          <span>PARTS EXPLORER</span>
+        </h1>
+
+        <p style="color:rgb(106, 104, 104);">
+          Explore the important parts, working systems and small demonstration
+          models of Cars, Bikes and Lorries.
+        </p>
+
+        <div class="hero-buttons">
+          <button onclick="scrollToSection('vehicles')">
+            Explore Vehicles
+          </button>
+
+          <button class="outline" onclick="scrollToSection('models')">
+            View Models
+          </button>
+        </div>
+      </div>
+
+      <!-- ANIMATED CIRCLE HERO IMAGE -->
+      <div class="hero-car">
+        <div class="vocational-trader-wrapper">
+          <img src="vocational-trader.png" alt="Vocational Trader" class="trader-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- VEHICLES -->
+    <section id="vehicles">
+      <div class="section-title">
+        <span>01</span>
+        <h2>Vehicle Categories</h2>
+        <p>Select a vehicle to explore its major systems.</p>
+      </div>
+
+      <div class="vehicle-grid">
+        <div class="vehicle-card" onclick="showVehicle('car')">
+          <img src="car.jpg.png" alt="Car" />
+
+          <div class="card-content">
+            <h3 class="colo">🚗 Cars</h3>
+
+            <p>
+              Learn about engine, gearbox, brakes, suspension and electrical
+              systems.
+            </p>
+
+            <button>Explore →</button>
+          </div>
+        </div>
+
+        <div class="vehicle-card" onclick="showVehicle('bike')">
+          <img src="bike.jpg.png" alt="Bike" />
+
+          <div class="card-content">
+            <h3 class="colo">🏍️ Bikes</h3>
+
+            <p>Understand engine, clutch, chain, brakes and suspension.</p>
+
+            <button>Explore →</button>
+          </div>
+        </div>
+
+        <div class="vehicle-card" onclick="showVehicle('lorry')">
+          <img src="lorry.jpg.png" alt="Lorry" />
+
+          <div class="card-content">
+            <h3 class="colo">🚛 Lorries</h3>
+
+            <p>
+              Explore heavy vehicle engines, braking systems and transmission.
+            </p>
+
+            <button>Explore →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTS -->
+    <section id="parts" class="parts-section">
+      <div class="section-title">
+        <span>02</span>
+        <h2 style="color: white;">Automobile Parts</h2>
+        <p>Important components used in automobiles.</p>
+      </div>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search automobile part..."
+          onkeyup="searchParts()"
+        />
+
+        🔍
+      </div>
+
+      <section class="controls">
+        <div class="categories" id="categories">
+            <button class="category active" data-category="All">
+                All
+            </button>
+        </div>
+      </section>
+
+      <main class="container">
+        <div class="result-count">
+            Showing <b id="resultCount">0</b> components
+        </div>
+
+        <div class="parts-grid" id="partsGrid"></div>
+      </main>
+    </section>
+
+    <!-- WORKING MODELS -->
+    <section id="models">
+      <div class="section-title">
+        <span>03</span>
+
+        <h2>Mini Working Models</h2>
+
+        <p>Physical models that can be demonstrated during the exhibition.</p>
+      </div>
+
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="model-icon">⚙️</div>
+
+          <h3>Mini Gearbox</h3>
+
+          <p>Demonstrate how different gears change speed and torque.</p>
+
+          <span>Difficulty: ⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🛞</div>
+
+          <h3>Hydraulic Brake Model</h3>
+
+          <p>
+            Show how pressure is transferred through hydraulic fluid to operate
+            brakes.
+          </p>
+
+          <span>Difficulty: ⭐⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🔋</div>
+
+          <h3>Vehicle Electrical System</h3>
+
+          <p>
+            Use LEDs to demonstrate headlights, indicators and basic circuits.
+          </p>
+
+          <span>Difficulty: ⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🌡️</div>
+
+          <h3>Engine Cooling Model</h3>
+
+          <p>Demonstrate the basic concept of radiator-based cooling.</p>
+
+          <span>Difficulty: ⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🔧</div>
+
+          <h3>Clutch Working Model</h3>
+
+          <p>
+            Demonstrate how a clutch connects and disconnects power
+            transmission.
+          </p>
+
+          <span>Difficulty: ⭐⭐⭐</span>
+        </div>
+
+        <div class="model-card">
+          <div class="model-icon">🚦</div>
+
+          <h3>Smart Vehicle Safety</h3>
+
+          <p>
+            Demonstrate a simple obstacle warning system using sensors and LEDs.
+          </p>
+
+          <span>Difficulty: ⭐⭐⭐</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+      <div class="section-title">
+        <span>04</span>
+
+        <h2>How Automobile Systems Work</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <b>01</b>
+          <h3>Energy</h3>
+          <p>Fuel or electrical energy provides the required power.</p>
+        </div>
+
+        <div class="step">
+          <b>02</b>
+          <h3>Engine</h3>
+          <p>Engine converts energy into mechanical motion.</p>
+        </div>
+
+        <div class="step">
+          <b>03</b>
+          <h3>Transmission</h3>
+          <p>Gearbox and clutch transfer power.</p>
+        </div>
+
+        <div class="step">
+          <b>04</b>
+          <h3>Wheels</h3>
+          <p>Wheels convert rotational motion into vehicle movement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div>
+        <span class="tag"> SCIENCE • TECHNOLOGY • AUTOMOBILES </span>
+
+        <h2>Learn Automobiles Through Models</h2>
+
+        <p>
+          This project explains automobile technology using interactive web
+          content and physical demonstration models.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <strong>3</strong>
+          <span>Vehicles</span>
+        </div>
+
+        <div>
+          <strong>8+</strong>
+          <span>Parts</span>
+        </div>
+
+        <div>
+          <strong>6</strong>
+          <span>Models</span>
+        </div>
+      </div>
+    </section>
+
+    <style>
+/* VOCATIONAL TRADER IMAGE ANIMATED CIRCLE STYLES */
+.hero-car {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.vocational-trader-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9, #6366f1);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
+  animation: floatTrader 4s ease-in-out infinite;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Glowing background ring effect */
+.vocational-trader-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #2563eb, #38bdf8, #818cf8, #2563eb);
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(12px);
+  animation: spinGlow 8s linear infinite;
+  transition: opacity 0.5s ease;
+}
+
+.trader-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  background-color: #f8fafc;
+}
+
+/* HOVER EFFECTS */
+.vocational-trader-wrapper:hover {
+  transform: translateY(-10px) scale(1.05) rotate(2deg);
+  box-shadow: 0 25px 45px rgba(37, 99, 235, 0.55);
+}
+
+.vocational-trader-wrapper:hover::before {
+  opacity: 1;
+  filter: blur(18px);
+}
+
+.vocational-trader-wrapper:hover .trader-img {
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes floatTrader {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes spinGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .vocational-trader-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#697386;
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --border:#e5e7eb;
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+body.dark{
+    --bg:#0f172a;
+    --card:#172033;
+    --text:#f8fafc;
+    --muted:#a7b0c0;
+    --border:#263247;
+    --shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s;
+}
+
+/* HEADER */
+header{
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:800;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.theme-btn{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* HERO */
+.hero{
+    max-width:1250px;
+    margin:35px auto 20px;
+    padding:50px 25px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#1d4ed8,#2563eb,#0ea5e9);
+    color:white;
+    text-align:center;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.hero h1{
+    font-size:clamp(30px,5vw,55px);
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    opacity:.9;
+    line-height:1.7;
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+}
+
+.stat{
+    background:rgba(255,255,255,.15);
+    padding:12px 22px;
+    border-radius:12px;
+}
+
+/* CONTROLS */
+.controls{
+    max-width:1250px;
+    margin:25px auto;
+    padding:0 20px;
+}
+
+.search-box{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px 20px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--card);
+    color:var(--text);
+    outline:none;
+    font-size:16px;
+}
+
+.categories{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.category{
+    padding:10px 16px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    border-radius:30px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.category:hover,
+.category.active{
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
+}
+
+/* GRID */
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:0 20px 50px;
+}
+
+.result-count{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.parts-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    transition:.25s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card-icon{
+    width:55px;
+    height:55px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    background:#eff6ff;
+    margin-bottom:17px;
+}
+
+body.dark .card-icon{
+    background:#1e3a5f;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.55;
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:15px;
+    padding:5px 10px;
+    border-radius:20px;
+    background:#eff6ff;
+    color:var(--primary);
+    font-size:12px;
+    font-weight:700;
+}
+
+body.dark .badge{
+    background:#1e3a5f;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:200;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+    width:min(650px,100%);
+    max-height:85vh;
+    overflow:auto;
+    background:var(--card);
+    border-radius:22px;
+    padding:30px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:15px;
+    border:none;
+    background:none;
+    color:var(--text);
+    font-size:28px;
+    cursor:pointer;
+}
+
+.modal-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.modal-content h2{
+    margin-bottom:10px;
+}
+
+.modal-content p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.info-box{
+    padding:15px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-top:12px;
+}
+
+.info-box strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:30px 20px;
+    color:var(--muted);
+}
+
+@media(max-width:600px){
+    .navbar{
+        padding:14px;
+    }
+
+    .hero{
+        margin:20px 12px;
+        padding:35px 18px;
+    }
+
+    .controls,
+    .container{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .parts-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+
+    <!-- FOOTER -->
+    <footer>
+      <h3>🚘 SMART AUTOMOBILE PARTS EXPLORER</h3>
+      <p>District Level Science Project</p>
+      <p>Designed & Developed in <i>YASWANTH.B</i></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
