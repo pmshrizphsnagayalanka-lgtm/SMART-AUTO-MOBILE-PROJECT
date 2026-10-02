@@ -1,9 +1,198 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
+
+
+
+/* ==============================
+   VOCATIONAL TRAINER HERO IMAGE
+================================ */
+
+.hero-trainer {
+    position: relative;
+    width: 330px;
+    height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: trainerFloat 4s ease-in-out infinite;
+}
+
+/* Gradient glow behind Sir */
+
+.trainer-glow {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #00c6ff,
+        #2563eb,
+        #8b5cf6,
+        #ec4899
+    );
+
+    filter: blur(35px);
+
+    opacity: 0.75;
+
+    animation: trainerGlow 4s ease-in-out infinite;
+}
+
+/* Sir Image */
+
+.hero-trainer img {
+    position: relative;
+    z-index: 2;
+
+    width: 260px;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 28px;
+
+    border: 3px solid rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35),
+        0 0 35px rgba(0,198,255,0.35);
+
+    transition: 0.5s ease;
+}
+
+/* Hover effect */
+
+.hero-trainer:hover img {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.45),
+        0 0 50px rgba(139,92,246,0.6);
+}
+
+/* Rotating gradient ring */
+
+.trainer-ring {
+    position: absolute;
+
+    width: 300px;
+    height: 365px;
+
+    border-radius: 35px;
+
+    border: 2px solid transparent;
+
+    background:
+        linear-gradient(#0000, #0000) padding-box,
+        linear-gradient(
+            135deg,
+            #00c6ff,
+            #7c3aed,
+            #ec4899,
+            #00c6ff
+        ) border-box;
+
+    z-index: 1;
+
+    animation: ringRotate 5s linear infinite;
+}
+
+
+/* Floating animation */
+
+@keyframes trainerFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* Glow animation */
+
+@keyframes trainerGlow {
+
+    0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.85;
+    }
+}
+
+
+/* Ring animation */
+
+@keyframes ringRotate {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .hero-trainer {
+        width: 280px;
+        height: 340px;
+
+        margin: 40px auto 0;
+    }
+
+    .hero-trainer img {
+        width: 220px;
+        height: 280px;
+    }
+
+    .trainer-ring {
+        width: 250px;
+        height: 310px;
+    }
+
+    .trainer-glow {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.hlink{
+  color: #40577f;
+  
+}
+
+.hlink :hover{
+  color: #748fbd;
+  
 }
 
 html {
@@ -48,19 +237,20 @@ nav {
 }
 
 nav a {
-  color: #b9c0cc;
+  color: #202633;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
 }
 
 nav a:hover {
-  color: white;
+  color: #6176a2;
+  transition: 1px;
 }
 
 /* HERO */
 
-.hero {
+.heros {
   min-height: 90vh;
 
   display: flex;
@@ -77,12 +267,16 @@ nav a:hover {
   max-width: 680px;
 }
 
+.colo{
+  color:white;
+}
+
 .tag {
   display: inline-block;
 
   padding: 7px 13px;
 
-  border: 1px solid #364154;
+  border: 1px solid #7389ae;
 
   border-radius: 50px;
 
@@ -91,7 +285,7 @@ nav a:hover {
 
   letter-spacing: 2px;
 
-  color: #aeb8c9;
+  color: #486598;
 }
 
 .hero h1 {
